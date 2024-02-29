@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Doctor = require("../models/doctorModel");
-const authMiddleware = require("../middlewares/authMiddleware");
-const Appointment = require("../models/appointmentModel");
-const User = require("../models/userModel");
+const Doctor = require("../models/doctorModel.js");
+const authMiddleware = require("../middlewares/authMiddleware.js");
+const Appointment = require("../models/appointmentModel.js");
+const User = require("../models/userModel.js");
 
 router.post("/get-doctor-info-by-user-id", authMiddleware, async (req, res) => {
   try {

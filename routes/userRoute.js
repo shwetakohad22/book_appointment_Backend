@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/userModel");
-const Doctor = require("../models/doctorModel");
+const User = require("../models/userModel.js");
+const Doctor = require("../models/doctorModel.js");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const authMiddleware = require("../middlewares/authMiddleware");
-const Appointment = require("../models/appointmentModel");
+const authMiddleware = require("../middlewares/authMiddleware.js");
+const Appointment = require("../models/appointmentModel.js");
 const moment = require("moment");
 
 router.post("/register", async (req, res) => {

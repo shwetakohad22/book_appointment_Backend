@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/userModel.js");
-const Doctor = require("../models/doctorModel.js");
-const authMiddleware = require("../middlewares/authMiddleware.js");
+const User = require("../models/userModel");
+const Doctor = require("../models/doctorModel");
+const authMiddleware = require("../middlewares/authMiddleware");
 
 router.get("/get-all-doctors", authMiddleware, async (req, res) => {
   try {
@@ -75,7 +75,5 @@ router.post(
     }
   }
 );
-
-
 
 module.exports = router;

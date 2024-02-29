@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const Doctor = require("../models/doctorModel.js");
-const authMiddleware = require("../middlewares/authMiddleware.js");
-const Appointment = require("../models/appointmentModel.js");
-const User = require("../models/userModel.js");
+const Doctor = require("../models/doctorModel");
+const authMiddleware = require("../middlewares/authMiddleware");
+const Appointment = require("../models/appointmentModel");
+const User = require("../models/userModel");
 
 router.post("/get-doctor-info-by-user-id", authMiddleware, async (req, res) => {
   try {
@@ -95,7 +95,7 @@ router.post("/change-appointment-status", authMiddleware, async (req, res) => {
 
     res.status(200).send({
       message: "Appointment status updated successfully",
-      success: true
+      success: true,
     });
   } catch (error) {
     console.log(error);

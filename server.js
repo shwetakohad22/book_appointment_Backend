@@ -13,7 +13,6 @@ app.use(express.json());
 // Enable CORS for all routes
 app.use(cors());
 
-// Define your routes
 app.use("/api/user", userRoute);
 app.use("/api/admin", adminRoute);
 app.use("/api/doctor", doctorRoute);

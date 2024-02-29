@@ -3,9 +3,9 @@ const app = express();
 require("dotenv").config();
 const dbConfig = require("./config/dbConfig");
 app.use(express.json());
-const userRoute = require("../../final project/server/routes/userRoute.js");
-const adminRoute = require("../../final project/server/routes/adminRoute.js");
-const doctorRoute = require("../../final project/server/routes/doctorsRoute");
+const userRoute = require("./routes/userRoute.js"); // Update paths here
+const adminRoute = require("./routes/adminRoute.js"); // Update paths here
+const doctorRoute = require("./routes/doctorsRoute.js"); // Update paths here
 const path = require("path");
 
 app.use("/api/user", userRoute);

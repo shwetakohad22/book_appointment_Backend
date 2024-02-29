@@ -22,3 +22,19 @@ const port = process.env.PORT || 5000;
 
 app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(port, () => console.log(`Node Express Server Started at ${port}!`));
+
+// Enable CORS for specific origins
+const allowedOrigins = [
+  "https://app.netlify.com/sites/book-myappointment/deploys/65e04c17b9827ee88482a0c1",
+];
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+  })
+);
